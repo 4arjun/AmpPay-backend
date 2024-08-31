@@ -29,5 +29,5 @@ urlpatterns = [
     path('api/energyusage/', EnergyUsageList.as_view(), name='energyusage-list-create'),
     path('api/receive-data/', receive_data, name='receive_data'),
     path('api/predictenergyconsumption',predictenergyconsumption, name='predictenergyconsumption'),
-    path('send-data-to-arduino/', send_data_to_arduino, name='send_data_to_arduino'),
+    path('send_data_to_arduino/', send_data_to_arduino, name='send_data_to_arduino'),
 ]
