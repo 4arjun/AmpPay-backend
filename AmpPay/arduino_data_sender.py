@@ -2,9 +2,9 @@ import serial
 import requests
 
 # Set up serial communication with the Arduino
-ser = serial.Serial('/dev/tty.usbmodem1101', 9600)
+ser = serial.Serial('/dev/cu.usbmodem1101', 9600)
   # Replace 'COMX' with the appropriate port for your Arduino
-ser.timeout = 5  # Set a timeout for serial communication
+ser.timeout = 50  # Set a timeout for serial communication
 
 # URL of your Django server's receive_data endpoint
 Django_URL = 'http://localhost:8000/api/receive-data/'

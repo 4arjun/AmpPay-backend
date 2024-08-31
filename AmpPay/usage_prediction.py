@@ -56,6 +56,6 @@ mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse:.2f}")
 
 # Predict energy usage at the end of the month
-end_of_month_julian_date = pd.to_datetime('2024-04-29').to_julian_date()
+end_of_month_julian_date = pd.to_datetime('2024-08-31').to_julian_date()
 predicted_usage = model.predict([[end_of_month_julian_date]])
 print(f"Predicted usage at the end of the month: {predicted_usage[0]:.2f} units")

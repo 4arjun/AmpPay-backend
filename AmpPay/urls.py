@@ -19,7 +19,7 @@ from django.urls import path
 from .views import EnergyUsageList
 from .views import receive_data
 from .views import predictenergyconsumption
-
+from .views import send_data_to_arduino
 
 
 
@@ -28,5 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/energyusage/', EnergyUsageList.as_view(), name='energyusage-list-create'),
     path('api/receive-data/', receive_data, name='receive_data'),
-    path('api/predictenergyconsumption',predictenergyconsumption, name='predictenergyconsumption')
+    path('api/predictenergyconsumption',predictenergyconsumption, name='predictenergyconsumption'),
+    path('send-data-to-arduino/', send_data_to_arduino, name='send_data_to_arduino'),
 ]

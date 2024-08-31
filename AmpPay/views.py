@@ -10,6 +10,9 @@ from rest_framework.response import Response
 import os
 import sys
 import django
+import serial
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Add the parent directory containing your Django project to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -108,10 +111,27 @@ def predictenergyconsumption(req):
     print(f"Mean Squared Error: {mse:.2f}")
 
     # Predict energy usage at the end of the month
-    end_of_month_julian_date = pd.to_datetime('2024-03-29').to_julian_date()
+    end_of_month_julian_date = pd.to_datetime('2024-08-29').to_julian_date()
     predicted_usage = model.predict([[end_of_month_julian_date]])
     print(f"Predicted usage at the end of the month: {predicted_usage[0]:.2f} units")
     response_data = {
         'predicted_usage': predicted_usage[0]
     }
     return JsonResponse(response_data)
+
+
+
+ser = serial.Serial('/dev/cu.usbmodem1101', 9600)  # Update with your serial port and baud rate
+
+@csrf_exempt
+def send_data_to_arduino(request):
+    if request.method == 'POST':
+        data = request.POST.get('data', '')
+        try:
+            # Convert data to integer if possible
+            int_data = int(data)
+            ser.write(str(int_data).encode())  # Convert integer to string and send
+            return HttpResponse("Data sent to Arduino successfully.")
+        except ValueError:
+            return HttpResponse("Invalid integer data provided.")
+    return HttpResponse("Invalid request method.")

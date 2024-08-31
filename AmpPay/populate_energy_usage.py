@@ -26,9 +26,9 @@ user = User.objects.get(username='Arjun')
 
 # Define parameters for data generation
 start_year = 2024
-start_month = 1  # January
-num_months = 4  # Generate data for 3 months
-days_in_month = [29,29,29,29]  # Days in January, February, March
+start_month = 8  # January
+num_months = 1  # Generate data for 3 months
+days_in_month = [30]  # Days in January, February, March
 
 initial_usage_value = 1.0
 daily_usage_increment = 1.0  # Increment in usage value per day
