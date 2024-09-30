@@ -1,0 +1,1 @@
+web: AmpPay.wsgi
