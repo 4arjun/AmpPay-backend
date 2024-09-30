@@ -4,7 +4,7 @@
         "src": "AmpPay/wsgi.py",
         "use": "@vercel/python",
         "config": {
-          "maxLambdaSize": "500000mb"
+          "maxLambdaSize": "50mb"
         }
       }
     ],
