@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8shvoq+yxq6ub5#sv5psapy=^s$%5(0vwvv($7f@a2y-()hj*l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,7 +55,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Example: React development server
     'https://your-production-domain.com',  # Add your production domain
-    'https://amp-pay.vercel.app/',
+    'https://amp-pay.vercel.app',
 ]
 
 

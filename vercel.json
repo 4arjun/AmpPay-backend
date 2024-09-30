@@ -1,0 +1,18 @@
+{
+    "builds": [
+      {
+        "src": "AmpPay/wsgi.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "500000mb"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "AmpPay.wsgi:application"
+      }
+    ]
+  }
+  
