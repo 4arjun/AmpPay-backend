@@ -55,6 +55,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Example: React development server
     'https://your-production-domain.com',  # Add your production domain
+    'https://amp-pay.vercel.app/',
 ]
 
 
